@@ -18,7 +18,7 @@ print(f"Você digitou os números: ", end=" ")
 for v in valores:
     print(v, end=" ")
 ordem = valores.sort()
-print(f"\nOrdem crescente dos números: ",)
+print(f"\nOrdem crescente dos números: ", end=" ")
 for o in ordem:
     print(o, end=" ")
 print("Programa encerrado")
