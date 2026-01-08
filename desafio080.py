@@ -1,7 +1,6 @@
-n = tam = []
+n = []
 for i in range(0,5):
     n.append(int(input("Digite um número: ")))
-    tam = len(n)
     p = len(n)-1
     while p > 0 and n[p] < n[p-1]:
         temp = n[p]
