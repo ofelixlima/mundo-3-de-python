@@ -18,19 +18,26 @@ for i in range(0,q): #Números
         #print(t[i]) #lista de números
         #print("t[i][j]: ",t[i][j])
         #print("t[i][j::-1]: ",t[i][j::-1]) #Cada número
-        while p > 0 and t[i][p] < t[i][p-1]: #Se tamanho da lista maior que zero na contagem e numero atual igual ao um numero anterior
-            print(f"{t[i][p]} é menor que {t[i][p-1]}. Reordenando...")
-            print(t[i])
-            sleep(1)
-            limbo = t[i][p]
-            t[i][p] = t[i][p-1]
-            t[i][p-1] = limbo
+        while p > 0:
+            while t[i][p] < t[i][p-1]: #Se tamanho da lista maior que zero na contagem e numero atual igual ao um numero anterior
+                print(t[i], end=" ")
+                print(f"{t[i][p]} é menor que {t[i][p-1]}. Reordenando...")
+                sleep(2)
+                limbo = t[i][p]
+                t[i][p] = t[i][p-1]
+                t[i][p-1] = limbo
             if t[i][p] == t[i][p-1]: #Se último num é igual a num da lista
                 print(f"{t[i][p]} já está na lista. Apagando e adicionando novo número na posição...")
                 print(t[i])
-                sleep(1)
+                sleep(2)
                 t[i][p] = randint(1,60)
-                r = r - 1
+                while t[i][p] < t[i][p-1]: #Se tamanho da lista maior que zero na contagem e numero atual igual ao um numero anterior
+                    print(t[i], end=" ")
+                    print(f"{t[i][p]} é menor que {t[i][p-1]}. Reordenando...")
+                    sleep(2)
+                    limbo = t[i][p]
+                    t[i][p] = t[i][p-1]
+                    t[i][p-1] = limbo
             p = p - 1
     n.append(t[i])
 t.clear()
