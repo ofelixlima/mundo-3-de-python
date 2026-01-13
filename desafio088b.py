@@ -1,9 +1,10 @@
-n = [11, 20, 51, 25, 39, 40]
-print(max(n))
-print(n.index(max(n)))
-if n[n.index(max(n))] > n[p]:
-    print(f"{max(n)} não está na última posição.")
-    temp = n[n.index(max(n))]
-    del n[n.index(max(n))]
-    n.append(temp)
+from random import randint
+n = [2, 31, 45, 45, 53, 56]
+for i in range(0,len(n)-1):
+    p = len(n)-1
+    while p > 0:
+        while n[p] == n[p-1]:
+            temp = n[p]
+            n[p] = randint(1,60)
+        p = p - 1
 print(n)
