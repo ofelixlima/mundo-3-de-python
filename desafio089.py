@@ -5,8 +5,8 @@ alunos = []
 continuar = ""
 while True:
     temp.append(str(input("Nome: ")).strip().capitalize())
-    notas.append(int(input("Nota 1: ")))
-    notas.append(int(input("Nota 2: ")))
+    notas.append(float(input("Nota 1: ")))
+    notas.append(float(input("Nota 2: ")))
     temp.append(notas[:])
     notas.clear()
     media = sum(temp[1])/len(temp[1])
@@ -26,7 +26,7 @@ while True:
         print(f"{"Nº":<6} {"NOME":<10} {"MÉDIA":<5}")
         print("-"*25)
         for i in range(0,len(nome)):
-            print(f"{i:<6} {nome[i]:<10} {media[i]:<5}")
+            print(f"{i:<6} {nome[i]:<10} {media[i]:<5.1f}")
         print("-"*50)
         escolha = 0
         while escolha != 999:
