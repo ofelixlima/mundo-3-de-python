@@ -90,9 +90,49 @@ for i in range(0,q): #Números
                             v = v - 1
             r = r - 1
         p = p - 1
+<<<<<<< HEAD
         print(f"t[{i}]: {t[i]}")
         #sleep(2)
+=======
+        print("================")
+        print(f"t[i]: {t[i]}")
+        print("================")
+        for k in range(1,len(t[i])-1):
+            print("Reorganizando números internos...")
+            s = len(t[i]) - 2
+            while s > 0:
+                while t[i][s] < t[i][s-1]:
+                    temp = t[i][s]
+                    t[i][s] = t[i][s-1]
+                    t[i][s-1] = temp
+                    print(n," Lista atualizada!")
+                s = s - 1
+for i in range(0,len(t)):
+    r = len(t[i])-2
+    p = len(t[i])-2
+    while p > 0:
+        while t[i][p] == t[i][p-1]:
+            temp = t[i][p]
+            t[i][p] = randint(1,60)
+            while t[i][t[i].index(max(t[i]))] != t[i][len(t[i])-1]: #numero atual maior que numero anterior
+                print(f"{t[i]} {t[i][r]} é o maior número. Subindo posição até a última...")
+                #sleep(2)
+                limbo = t[i][t[i].index(max(t[i]))]
+                t[i][t[i].index(max(t[i]))] = t[i][r+1]
+                t[i][r+1] = limbo
+            while r > 0 and t[i][t[i].index(min(t[i]))] != t[i][0]:
+                print(f"{t[i]} {t[i][r]} é o menor número. Descendo posição até a primeira.")
+                limbo = t[i][t[i].index(min(t[i]))]
+                t[i][t[i].index(min(t[i]))] = t[i][r-1]
+                t[i][r-1] = limbo
+                r = r - 1
+        p = p - 1
+#print(f"t: {t}")
+for i in range(0,len(t)):
+    t[i].sort() #Ainda tem bugs de numeros fora de ordem. Usando para facilitar.
+>>>>>>> e4e7556b1c79d598625bfadbd54c24e9a0dfbebd
     n.append(t[i])
+#print(t)
+print("n :", n)
 t.clear()
-print(t)
-print(n)
+#print("t: ",t)
