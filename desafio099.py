@@ -1,22 +1,31 @@
 from random import randint
 from time import sleep
-def maior(* numeros):
-    top = m = 0
+def separador():
+    print("-="*15, flush=True)
+def maior(* numeros, m = 0):
+    separador()
     for n in numeros:
-        if n > top:
-            top = m
-    print(f"Foram gerados {len(numeros)} números.")
-    print(f"O maior número digitado foi {m}.")
-legado = ()
-contador = (5, 3, 2, 1, 0)
-grupo = []
-for f in range(len(contador)):    
-    for g in range(contador[f]):
-        g = randint(0, 10)
-        g += 1
-        legado = (*legado, g)
-        print(legado, flush=True)
-        grupo.append(legado)
-        del legado
-        
-        sleep(0.25)
+        if n > m:
+            m = n
+    for n in numeros:
+        print(n, end=" ", flush=True)
+        sleep(0.5)
+    print("Fim", end=" ", flush=True)
+    sleep(0.5)
+    print(f"Foram gerados {len(numeros)} números.", flush=True)
+    sleep(0.5)
+    print(f"O maior número digitado foi {m}.", flush=True)
+    separador()
+def geradorNumeros(temp, contadores, todos):
+    for f in contadores:    
+        for g in range(f):
+            g = randint(0, 10)
+            g += 1
+            temp = (*temp, g)
+            sleep(0.5)
+        if len(temp) == f:
+            todos.append(temp)        
+            temp = ()
+    for i in todos:
+        maior(*i)
+geradorNumeros((),(6,3,2,1,0),[])
