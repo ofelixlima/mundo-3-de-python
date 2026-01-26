@@ -1,7 +1,5 @@
-from cores import design
-from datetime import datetime
-print(datetime.now().year)
 def voto():
+    from datetime import datetime
     ano = int(input("Em que ano você nasceu? \033[0;32m"))
     print('\033[m', end='')
     idade = datetime.now().year - ano

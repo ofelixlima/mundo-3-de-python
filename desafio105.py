@@ -18,7 +18,8 @@ def notas(*n, sit=False):
         else:
             grupo['situação'] = "RUIM"
     return grupo
+
 #resp = notas(5.5, 9.5, 10, 6.5)
-resp = notas(5.5, 9.5, 10, 6.5, sit=True)
+resp = notas(9, 2.1, 1, 3, sit=True)
 print(resp)
 #help(notas)
